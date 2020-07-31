@@ -1,0 +1,11 @@
+/execute as @a[scores={useRod=1..}] at @s run summon minecraft:armor_stand ~ ~ ~ {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["magicalBall"]}
+
+　/execute as @a[scores={useRod=1..}] at @s run tp @e[tag=magicalBall,limit=1,sort=nearest] ~ ~ ~ ~ ~
+
+　/execute as @e[type=armor_stand,tag=magicalBall] at @s run tp ^ ^ ^1.0
+
+　/scoreboard players set @a[scores={useRod=1..}] useRod 0
+
+　/execute as @e[tag=magicalBall] at @s run particle flame ~ ~1.5 ~ 0.1 0.1 0.1 0.02 5
+
+　/execute as @e[tag=magicalBall] at @s run effect give @e[distance=..1.5] instant_damage 1 0
